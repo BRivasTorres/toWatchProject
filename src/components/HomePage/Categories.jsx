@@ -3,7 +3,7 @@ import categories from "../../mock/categories";
 
 const Categories = () => {
     return (
-        <section className="w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <section className="w-[60%]  mx-auto grid grid-cols-1 gap-4">
             {categories.map((item, id) => {
                 return (
                     <NavLink

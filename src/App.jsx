@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Movies from "./pages/Movies";
 import Series from "./pages/Series";
 import Animes from "./pages/Animes";
-import Documentaries from "./pages/Documentaries";
 import Home from "./pages/Home";
 import Header from "./components/Header/Header";
 
@@ -17,10 +16,6 @@ function App() {
                         <Route path="/movies" element={<Movies />}></Route>
                         <Route path="/series" element={<Series />}></Route>
                         <Route path="/animes" element={<Animes />}></Route>
-                        <Route
-                            path="/documentaries"
-                            element={<Documentaries />}
-                        ></Route>
                     </Routes>
                 </div>
             </BrowserRouter>

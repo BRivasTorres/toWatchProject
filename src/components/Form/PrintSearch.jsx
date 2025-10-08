@@ -7,9 +7,9 @@ const baseImgUrl = "https://image.tmdb.org/t/p/w500";
 const PrintSearch = ({category, data}) => {
     const dispatch = useDispatch()
     const {handleMoviesSeriesDetails, handleAnimesDetials} = useHandleDetails(dispatch, category)
-    
+        
     const handleOnClick = (item, displayName) => {
-        if(category === "movies" || category === "series" || category === "documentaries") {
+        if(category === "movies" || category === "series") {
             handleMoviesSeriesDetails(item, displayName)
         } else if(category === "animes") {
             handleAnimesDetials(item, displayName)

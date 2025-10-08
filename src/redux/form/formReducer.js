@@ -4,7 +4,6 @@ const initialState = {
 	movies: [],
 	series: [],
 	animes: [],
-	documentaries: [],
 };
 
 const formReducer = (state = initialState, action) => {
