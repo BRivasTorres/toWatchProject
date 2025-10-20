@@ -35,55 +35,61 @@ const Titles = ({category}) => {
     }, [category, dispatch, titles]);
     
     return (
-        <div className="sm:mt-4 flex flex-col gap-4 ">
+        <div className="sm:mt-4 flex flex-col gap-4">
             {titles && titles.length > 0 ? (
                 titles.map((item, id) => (
                     <ul key={id}>
                         <li
-                            className={`text-highlight-color neomorphism-shadow flex  items-center justify-center px-8 py-4 flex-col transition-all duration-300 ease-linear`}
+                            className={`text-highlight-color border-[2px] border-accent-color flex items-center justify-center p-4 flex-col transition-all duration-300 ease-linear`}
                             style={{
                                 borderRadius: item.showTitleDetails
                                     ? "0.75rem"
                                     : "100px",
-                                opacity: item.isWatched 
-                                    ? ".45"
-                                    : "1"
                             }}
                         >
-                            <section className="flex justify-between items-center">
-                                <InputTitle 
-                                    item={item}
-                                    category={category}
-                                />
-                                <TextAreaTitle
-                                    item={item}
-                                    category={category}
-                                    inputRefs={inputRefs}
-                                />
-                                <ButtonsTitle
-                                    item={item}
-                                    category={category}
-                                    inputRefs={inputRefs}
-                                />
-                            </section>
-                            <section className="pt-6">
-                                {item.showTitleDetails && (
-                                    <motion.div
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: "auto" }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                        transition={{
-                                            duration: 0.3,
-                                            ease: "linear",
-                                        }}
-                                    >
-                                        <TitleDetails
-                                            category={category}
-                                            item={item}
-                                        />
-                                    </motion.div>
-                                )}
-                            </section>
+                            <div
+                                style={{
+                                    opacity: item.isWatched ? ".45" : "1",
+                                }}
+                            >
+                                <section className="flex justify-between items-center">
+                                    <InputTitle
+                                        item={item}
+                                        category={category}
+                                    />
+                                    <TextAreaTitle
+                                        item={item}
+                                        category={category}
+                                        inputRefs={inputRefs}
+                                    />
+                                    <ButtonsTitle
+                                        item={item}
+                                        category={category}
+                                        inputRefs={inputRefs}
+                                    />
+                                </section>
+                                <section className="pt-6">
+                                    {item.showTitleDetails && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{
+                                                opacity: 1,
+                                                height: "auto",
+                                            }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{
+                                                duration: 0.3,
+                                                ease: "linear",
+                                            }}
+                                        >
+                                            <TitleDetails
+                                                category={category}
+                                                item={item}
+                                            />
+                                        </motion.div>
+                                    )}
+                                </section>
+                            </div>
                         </li>
                     </ul>
                 ))

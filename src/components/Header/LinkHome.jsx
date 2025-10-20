@@ -7,8 +7,8 @@ const LinkHome = () => {
                 to={"/"}
                 className={({ isActive }) =>
                     `${
-                        isActive ? "neomorphism-active" : ""
-                    } uppercase py-2 px-4 neomorphism-shadow rounded-full`
+                        isActive ? "bg-accent-color" : ""
+                    } uppercase py-2 px-4 rounded-full text-highlight-color`
                 }
             >
 				Home

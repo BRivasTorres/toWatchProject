@@ -2,7 +2,7 @@ import ImageFiller from "react-image-filler";
 
 const DetailsImg = ({imgUrl, item}) => {
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center m-4">
             {imgUrl ? (
                 <img
                     src={`${imgUrl}`}

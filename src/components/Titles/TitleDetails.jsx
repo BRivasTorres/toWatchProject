@@ -38,53 +38,61 @@ const TitleDetails = ({category, item}) => {
     };
     
     return (
-        <div className="bg bg-accent-color p-4 rounded-lg">
-            {normalizeData.imgUrl && (
-                <section>
-                    {<DetailsImg item={item} imgUrl={normalizeData.imgUrl} />}
-                </section>
-            )}
-            <section className="flex flex-col gap-y-2 ">
-                {normalizeData.genres && (
-                    <DetailsGenres genres={normalizeData.genres} />
-                )}
-                {normalizeData.overview && (
-                    <DetailsOverview overview={normalizeData.overview} />
-                )}
-                {normalizeData.numberOfEpisodes && (
-                    <DetailsEpisodes episodes={normalizeData.numberOfEpisodes} />
-                )}
-                {normalizeData.numberOfSeasons && (
-                    <DetailsSeasons seasons={normalizeData.numberOfSeasons} />
-                )}
-                {normalizeData.status && (
-                    <DetailsStatus status={normalizeData.status} />
-                )}
-                {normalizeData.voteAverage && (
-                    <DetailsVoteAverage voteAverage={normalizeData.voteAverage} />
-                )}
-                {normalizeData.runtime && (
-                    <DetailsRuntime runtime={normalizeData.runtime} />
-                )}
-                {normalizeData.aired && (
-                    <DetailsAirDate aired={normalizeData.aired} />
-                )}
-            </section>
-            
-            <section className="mt-4">
-                {normalizeData.seasons && (
-                    <Seasons seasons={normalizeData.seasons} category={category} title={selectedTitle.title}  />
-                )}
-                {normalizeData.numberOfEpisodes && !normalizeData.seasons && (
-                    <CurrentEpisode
-                        selectedTitle={selectedTitle}
-                        category={category}
-                        episodeCount={normalizeData.numberOfEpisodes}
-                    />
-                )}
-            </section>
-        </div>
-    );
+		<div className="bg bg-highlight-color p-4 rounded-lg text-main-color">
+			{normalizeData.imgUrl && (
+				<section>
+					{<DetailsImg item={item} imgUrl={normalizeData.imgUrl} />}
+				</section>
+			)}
+			<section className="flex flex-col gap-y-2 ">
+				{normalizeData.genres && (
+					<DetailsGenres genres={normalizeData.genres}/>
+				)}
+				{normalizeData.overview && (
+					<DetailsOverview overview={normalizeData.overview} />
+				)}
+				{normalizeData.numberOfEpisodes && (
+					<DetailsEpisodes
+						episodes={normalizeData.numberOfEpisodes}
+					/>
+				)}
+				{normalizeData.numberOfSeasons && (
+					<DetailsSeasons seasons={normalizeData.numberOfSeasons} />
+				)}
+				{normalizeData.status && (
+					<DetailsStatus status={normalizeData.status} />
+				)}
+				{normalizeData.voteAverage && (
+					<DetailsVoteAverage
+						voteAverage={normalizeData.voteAverage}
+					/>
+				)}
+				{normalizeData.runtime && (
+					<DetailsRuntime runtime={normalizeData.runtime} />
+				)}
+				{normalizeData.aired && (
+					<DetailsAirDate aired={normalizeData.aired} />
+				)}
+			</section>
+
+			<section className="mt-4">
+				{normalizeData.seasons && (
+					<Seasons
+						seasons={normalizeData.seasons}
+						category={category}
+						title={selectedTitle.title}
+					/>
+				)}
+				{normalizeData.numberOfEpisodes && !normalizeData.seasons && (
+					<CurrentEpisode
+						selectedTitle={selectedTitle}
+						category={category}
+						episodeCount={normalizeData.numberOfEpisodes}
+					/>
+				)}
+			</section>
+		</div>
+	);
 }
 
 export default TitleDetails

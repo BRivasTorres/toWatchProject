@@ -10,8 +10,8 @@ const PrintNavLinks = ({ links }) => {
                         key={id}
                         className={({ isActive }) =>
                             `${
-                                isActive ? "neomorphism-active" : ""
-                            } py-2 px-4 neomorphism-shadow rounded-full text-highlight-color`
+                                isActive ? "bg-accent-color" : ""
+                            } py-2 px-4 rounded-full text-highlight-color capitalize`
                         }
                     >
                         {item.title}

@@ -32,7 +32,7 @@ const InputForm = ({category}) => {
             type="text"
             placeholder="Add new title"
             name="add"
-            className="neomorphism-shadow rounded-full p-4 outline-none text-highlight-color placeholder:text-highlight-color mb-4 "
+            className="rounded-full p-4 outline-none text-highlight-color placeholder:text-highlight-color mb-4 bg-accent-color"
             onChange={handleOnChange}
             value={input}
         />
