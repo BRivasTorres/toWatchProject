@@ -1,9 +1,9 @@
 import { FORM_DELETE_TITLE, FORM_SHOW_TITLE_DETAILS, FORM_SUBMIT, FORM_UPDATE_TITLE, FORM_SET_TITLE_DETAILS, FORM_SET_INITIAL_DATA, FORM_SELECTED_CHAPTER, FORM_SELECTED_SEASON, FORM_UPDATE_FAVORITE, FORM_SET_WATCHED } from "./formActionTypes";
 
 const initialState = {
-	movies: [],
-	series: [],
-	animes: [],
+    movies: [],
+    series: [],
+    animes: [],
 };
 
 const formReducer = (state = initialState, action) => {
@@ -12,12 +12,12 @@ const formReducer = (state = initialState, action) => {
     switch (type) {
     case FORM_SUBMIT: {    
         return {
-			...state,
-			[category]: [
-				...state[category],
-				{ showTitleDetails: false, title: payload, isFavorite: false, isWatched: false },
-			],
-		};
+            ...state,
+            [category]: [
+                ...state[category],
+                { showTitleDetails: false, title: payload, isFavorite: false, isWatched: false },
+            ],
+        };
     }
     case FORM_DELETE_TITLE:
         return {
@@ -56,7 +56,7 @@ const formReducer = (state = initialState, action) => {
             ...state,
             [category]: state[category].map(item => 
                 item.title === payload.title
-                    ? {...item, currentSeason : payload.season}
+                    ? {...item, currentSeason: payload.season} 
                     : item
             )
         }
@@ -82,8 +82,8 @@ const formReducer = (state = initialState, action) => {
         return {
             ...state, 
             [category] : state[category].map(item =>
-                item.title === payload
-                    ? {...item, isWatched: !item.isWatched}
+                item.title === payload.title
+                    ? {...item, isWatched: !item.isWatched, watchedSeasons: payload.watchedSeasons} 
                     : item
             )
         }

@@ -15,30 +15,30 @@ const CurrentSeasons = ({ selectedTitle, seasons, category }) => {
     const currentSeason = selectedTitle?.currentSeason || "";
     
     const handleOnChange = (e) => {
-        const val = e.target.value
+        const val = e.target.value;
         dispatch(setSelectedSeason(val, selectedTitle.title, category));
         updateDateSeason(selectedTitle.title, category, val);
-    }
+    };
 
     return (
-        <FormControl className="w-[80%]">
-            <InputLabel id="seasons-label">Seasons</InputLabel>
-            <Select
-                labelId="seasons-label"
-                id="seasons-select"
-                value={currentSeason}
-                onChange={handleOnChange}
-                autoWidth
-                label="Seasons"
-            >
-                {seasons.map((season) => (
-                    <MenuItem key={season.id} value={season.name}>
-                        {season.name}
-                    </MenuItem>
-                ))}
-            </Select>
-        </FormControl>
-    );
+		<FormControl className="w-[80%]">
+			<InputLabel id="seasons-label">Seasons</InputLabel>
+			<Select
+				labelId="seasons-label"
+				id="seasons-select"
+				value={currentSeason}
+				onChange={handleOnChange}
+				autoWidth
+				label="Seasons"
+			>
+				{seasons.map((season) => (
+					<MenuItem key={season.id} value={season.name}>
+						{season.name}
+					</MenuItem>
+				))}
+			</Select>
+		</FormControl>
+	);
 };
 
 export default CurrentSeasons;

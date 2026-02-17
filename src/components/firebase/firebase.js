@@ -23,7 +23,7 @@ const password = import.meta.env.VITE_FIREBASE_USER_PASSWORD;
 
 signInWithEmailAndPassword(auth, email, password)
 	.then((userCredential) => {
-		console.log("Autenticación exitosa:", userCredential.user.uid);
+		console.log("Autenticación exitosa");
 	})
 	.catch((error) => {
 		console.error("Error al autenticar:", error.message);

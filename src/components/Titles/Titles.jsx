@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import { fetchData } from "../../redux/fetchData/fetchDataActions"
 
 const Titles = ({category}) => {
-    const titles = useSelector((state) => state.form[category]) 
+    const titles = useSelector((state) => state.form[category])
     const dispatch = useDispatch()
     const inputRefs = useRef([]);
     

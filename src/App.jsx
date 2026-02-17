@@ -7,7 +7,7 @@ import Header from "./components/Header/Header";
 
 function App() {
     return (
-        <div className="bg-main-color max-w-[1200px] min-w-[300px]  mx-auto py-[2.5rem] grid sm:grid-cols-[_30%_65%] grid-cols-1 gap-10 font-size ">
+        <div className="bg-main-color max-w-[1200px] min-w-[300px] min-h-screen mx-auto py-[2.5rem] grid sm:grid-cols-[_30%_65%] grid-cols-1 gap-10 font-size ">
             <BrowserRouter>
                 <Header />
                 <div className="px-6">

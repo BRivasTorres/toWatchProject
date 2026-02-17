@@ -53,7 +53,7 @@ const setInitialData = (data, category) => {
 
 const setSelectedSeason = (season, title, category) => {
     return {
-        type:FORM_SELECTED_SEASON,
+        type: FORM_SELECTED_SEASON,
         category,
         payload: {
             title,
@@ -81,11 +81,11 @@ const updateFavoriteTitle = (title, category) => {
     }
 }
 
-const setWatchedTitle = (title, category) => {
+const setWatchedTitle = (title, category, watchedSeasons) => {
     return {
         type: FORM_SET_WATCHED,
         category, 
-        payload: title
+        payload: {title, watchedSeasons} 
     }
 }
 
